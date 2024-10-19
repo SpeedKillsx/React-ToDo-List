@@ -6,30 +6,31 @@ const TodoItems = (props) => {
   
   const deleteItem = (id)=> {
       let data = JSON.parse(localStorage.getItem('todos'))
-      data = data.filter((todo),todo.id!== id)
+      console.log(id)
+      data = data.filter((todo) =>{
+        console.log(todo.id, id)
+        return todo.id!== id
+      })
+      localStorage.setItem('todos', JSON.stringify(data));
       props.setTodos(data);
   }
 
   const toggle = (id) =>{
 
     let data = JSON.parse(localStorage.getItem('todos'))
-    //console.log(id)
+    console.log(id)
     for (let index = 0; index < data.length; index++) {
        
       if (data[index].id === id){
-        console.log('yes')
         if (data[index].display ===""){
-          data[index].display='done'
-          console.log('changed')
-          console.log(data[index].display)
-            
+          data[index].display='done' 
           }
         else{
           data[index].display=""
         }
-        
+        break;
       }
-      break;
+      
       
     }
     props.setTodos(data);
@@ -39,7 +40,7 @@ const TodoItems = (props) => {
       <div className='list-container'>
         <img src={props.display === "" ? no_tick : tick} alt="status icon" className="status-icon"/>
         
-        <div key={props.id} className="todo-item" onClick={()=> toggle(props.id)}>
+        <div  className="todo-item" onClick={()=> toggle(props.id)}>
           {props.todo}
             
         </div>

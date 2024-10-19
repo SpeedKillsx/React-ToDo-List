@@ -3,7 +3,7 @@ import "./CSS/Todo.css"
 import { useState } from "react"
 import { useEffect } from "react"
 import TodoItems from "./TodoItems"
-let count = 0;
+//let count = 0;
 export const Todo = () => {
   const inputReference = useRef(null)
   const [todos, setTodos] = useState([])
@@ -13,18 +13,18 @@ export const Todo = () => {
   function addTodos(){
     const newTodo = {
       name:inputReference.current.value, 
-      id: count++,
+      id: Date.now(),
       display:""
     }
     setTodos([...todos, newTodo])
-    localStorage.setItem('todos_count', count)
+    //localStorage.setItem('todos_count', count)
     inputReference.current.value = "";
   }
 
   useEffect(()=>{
     
     setTodos(JSON.parse(localStorage.getItem('todos')))
-    count = localStorage.getItem('todos_count')
+    //count = localStorage.getItem('todos_count')
   }, [])
   useEffect(()=>{    
     setTimeout(() => {
@@ -47,8 +47,8 @@ export const Todo = () => {
             <h1>My todos</h1>
             <div className=" todo-show">
               
-                {todos.map((item,index)=>{
-                    return <TodoItems key={index} id={index} todo={item.name} display={item.display} setTodos={setTodos}/>
+                {todos.map((item)=>{
+                    return <TodoItems key={item.id} id={item.id} todo={item.name} display={item.display} setTodos={setTodos}/>
                 })}
               
             </div>
