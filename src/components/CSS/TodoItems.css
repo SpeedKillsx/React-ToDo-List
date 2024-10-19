@@ -1,0 +1,66 @@
+/* Conteneur général des items */
+.items-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  /* Conteneur de la liste */
+  .list-container {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Liste */
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  /* Item de la liste */
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px 0;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+  }
+  
+  .todo-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Icône de statut */
+  .status-icon {
+    width: 20px;
+    margin-right: 10px;
+  }
+  
+  .delete-icon {
+    width: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .delete-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .todo-item:hover {
+    background-color: #f94747;
+    cursor: pointer;
+  }
+  

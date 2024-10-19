@@ -1,0 +1,35 @@
+.todo-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    background: rgb(142, 176, 176);
+    
+}
+
+
+.todo-input{
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-left: 12px ;
+    margin-bottom: 5% ;
+    margin-right: 20%;
+
+}
+.item-input{
+    border-radius: 15px;
+    border-color: aqua;
+    width: 360px;
+    height: 15px;
+   
+    margin-left: 10%;
+}
+.item-input-button{
+    background-color: orangered;
+    border-radius: 12px;
+    border-color: aqua;
+    border-style: solid;
+    margin-right: 20%;
+    margin: l;
+}
