@@ -14,7 +14,8 @@ export const Todo = () => {
     const newTodo = {
       name:inputReference.current.value, 
       id: Date.now(),
-      display:""
+      display:"",
+      creation_date:new Date().toLocaleDateString()
     }
     setTodos([...todos, newTodo])
     //localStorage.setItem('todos_count', count)
