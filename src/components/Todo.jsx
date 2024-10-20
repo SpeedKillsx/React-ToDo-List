@@ -9,13 +9,13 @@ export const Todo = () => {
   const [todos, setTodos] = useState([])
   
   
-
+  
   function addTodos(){
     const newTodo = {
       name:inputReference.current.value, 
       id: Date.now(),
       display:"",
-      creation_date:new Date().toLocaleDateString()
+      creation_date:new Date().toISOString()
     }
     setTodos([...todos, newTodo])
     //localStorage.setItem('todos_count', count)
@@ -49,7 +49,7 @@ export const Todo = () => {
             <div className=" todo-show">
               
                 {todos.map((item)=>{
-                    return <TodoItems key={item.id} id={item.id} todo={item.name} display={item.display} setTodos={setTodos}/>
+                    return <TodoItems key={item.id} id={item.id} todo={item.name} display={item.display} setTodos={setTodos}creation_date={item.creation_date}/>
                 })}
               
             </div>
